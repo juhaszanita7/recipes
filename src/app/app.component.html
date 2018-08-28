@@ -4,15 +4,26 @@
 
 <section class="container">
   <div class="row">
-    <div *ngFor="let recipe of recipes" class="col-sm-6 col-md-3">
-      <p>{{recipe.name}}</p>
-      <p>{{recipe.type}}</p>
-      <p>{{recipe.cook_time}}</p>
-      <ul>
-        <li *ngFor="let ing of recipe.ingredients">
-          {{ing}}
-        </li>
-      </ul>
+    <div *ngFor="let recipe of recipes" class="col-sm-6 col-md-3 mb-3">
+      <div class="recipe">
+        <input type="checkbox" (click)="selectRecipe($event)"/>
+        <p>{{recipe.name}}</p>
+        <p>{{recipe.type}}</p>
+        <p>{{recipe.cook_time}}</p>
+        <ul>
+          <li *ngFor="let ing of recipe.ingredients">
+            {{ing}}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</section>
+
+<section>
+  <p>Selected recipes: {{ selectedRecipes }}</p>
+  <p>Ingredients of selected recipes:</p>
+  <ul>
+    <li></li>
+  </ul>
 </section>
