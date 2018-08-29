@@ -1,7 +1,7 @@
 .ingredients-list {
     h2 {
-        background-color: #cdc2a1;
-        color: #2b2b2b;
+        background-color: $base-light-color;
+        color: $base-dark-color;
         font-size: 24px;
         padding: 5px;
         margin-bottom: 15px;
@@ -12,8 +12,8 @@
 
         li {
             display: inline-block;
-            background-color: #2b2b2b;
-            color: #cdc2a1;
+            background-color: $base-dark-color;
+            color: $base-light-color;
             padding: 3px 10px;
             margin: 0 10px 10px 0;
         }

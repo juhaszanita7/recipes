@@ -1,0 +1,12 @@
+@mixin box-shadow($h, $v, $b, $s, $color, $opacity) {
+    -webkit-box-shadow: $h $v $b $s rgba($color,$opacity);
+    -moz-box-shadow: $h $v $b $s rgba($color,$opacity);
+    box-shadow: $h $v $b $s rgba($color,$opacity);
+}
+
+@mixin transition($prop, $ease, $time) {
+    -webkit-transition: $prop $ease $time;
+    -moz-transition: $prop $ease $time;
+    -o-transition: $prop $ease $time;
+    transition: $prop $ease $time;
+}

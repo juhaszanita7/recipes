@@ -6,14 +6,14 @@
         height: 300px;
         padding: 10px;
         margin-bottom: 30px;
-        background-color: #2b2b2b;
-        color: #cdc2a1;
+        background-color: $base-dark-color;
+        color: $base-light-color;
         overflow: hidden;
-        transition: all ease-in-out .2s;
+        @include transition(all, ease-in-out, 0.2s);
 
         &:hover {
             overflow: auto;
-            box-shadow: 0px 0px 5px 4px #cdc2a1;
+            @include box-shadow(0px, 0px, 5px, 4px, $base-light-color, 1);
         }
 
         @media screen and (max-width: 768px) {
@@ -21,7 +21,7 @@
         }
 
         &.selected {
-            box-shadow: 0px 0px 5px 4px #e9967a;
+            @include box-shadow(0px, 0px, 5px, 4px, $base-select-color, 1);
         }
 
         input[type=checkbox] {
