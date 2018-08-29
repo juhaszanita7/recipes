@@ -8,15 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   recipes = {};
-  selectedRecipes = 0;
-  selectedIngredients = [];
-  ingredientsToShow = [];
+  selectedRecipes: number = 0;
+  selectedIngredients: Array<string> = [];
+  ingredientsToShow: Array<string> = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get('assets/recipes.json').subscribe(res => {
-    this.recipes = res;
+      this.recipes = res;
     });
   }
 
@@ -27,23 +27,15 @@ export class AppComponent implements OnInit {
   }
 
   updateIngredients = (checked, index) => {
-      if (checked) {
-        //this.selectedIngredients.push(...this.recipes[index].ingredients);
-        this.selectedIngredients.push(this.recipes[index].ingredients);
-        //console.log(this.selectedIngredients);
-      } else {
-        //console.log(this.selectedIngredients.includes(this.recipes[index].ingredients));
-        this.selectedIngredients.splice(this.selectedIngredients.indexOf(this.recipes[index].ingredients), 1);
-        //console.log('after removal: ', this.selectedIngredients);
-      }
-      
-      this.ingredientsToShow = [].concat(...this.selectedIngredients);
-      //console.log('to show: ', this.ingredientsToShow);
+    checked ?
+      this.selectedIngredients.push(this.recipes[index].ingredients)
+    :
+      this.selectedIngredients.splice(this.selectedIngredients.indexOf(this.recipes[index].ingredients), 1);
 
-      this.ingredientsToShow.sort();
-      this.ingredientsToShow = this.ingredientsToShow.filter((val, ind, self) => {
-        return self.indexOf(val) === ind;
-      });
-      //console.log('to show after filter: ', this.ingredientsToShow);
+    this.ingredientsToShow = [].concat(...this.selectedIngredients);
+    this.ingredientsToShow.sort();
+    this.ingredientsToShow = this.ingredientsToShow.filter((value, _index, self) => {
+      return self.indexOf(value) === _index;
+    });
   }
 }

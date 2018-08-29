@@ -6,7 +6,7 @@
   <div class="row">
     <div *ngFor="let recipe of recipes, let i = index" class="col-sm-6 col-md-3 mb-3">
       <div class="recipe">
-        <input type="checkbox" value="{{ i }}" (click)="selectRecipe($event)"/>
+        <input type="checkbox" value="{{ i }}" (change)="selectRecipe($event)" />
         <p>{{recipe.name}}</p>
         <p>{{recipe.type}}</p>
         <p>{{recipe.cook_time}}</p>
@@ -22,10 +22,12 @@
 
 <section>
   <p>Selected recipes: {{ selectedRecipes }}</p>
-  <p>Ingredients of selected recipes:</p>
-  <ul>
-    <li *ngFor="let ing of ingredientsToShow">
-      {{ ing }}
-    </li>
-  </ul>
+  <div *ngIf="ingredientsToShow.length > 0">
+    <p>Ingredients of selected recipes:</p>
+    <ul>
+      <li *ngFor="let ing of ingredientsToShow">
+        {{ ing }}
+      </li>
+    </ul>
+  </div>
 </section>
