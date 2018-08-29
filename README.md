@@ -18,4 +18,4 @@ Now you can start to build the project.
 ## Build
 Go to the `recipes` folder.
 Run `npm install` to install the dependencies of the project. Then run `ng serve` / `npm start` to start the dev server.
-Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change (and save) any of the source files.
