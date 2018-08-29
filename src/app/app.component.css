@@ -1,6 +1,0 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-
-.recipe {
-    border: 1px solid lightgrey;
-    cursor: pointer;
-}

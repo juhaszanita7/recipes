@@ -1,15 +1,17 @@
-<header class="bg-info">
+<header>
   <h1 class="center-block">Recipes</h1>
+  <p>Selected recipes: {{ selectedRecipes }}</p>
 </header>
 
-<section class="container">
+<section class="container recipes">
   <div class="row">
-    <div *ngFor="let recipe of recipes, let i = index" class="col-sm-6 col-md-3 mb-3">
+    <div *ngFor="let recipe of recipes, let i = index" class="col-sm-6 col-md-4 col-lg-3">
       <div class="recipe">
-        <input type="checkbox" value="{{ i }}" (change)="selectRecipe($event)" />
-        <p>{{recipe.name}}</p>
-        <p>{{recipe.type}}</p>
-        <p>{{recipe.cook_time}}</p>
+        <input type="checkbox" value="{{ i }}" id="id-{{i}}" (change)="selectRecipe($event)" />
+        <h2>{{recipe.name}}</h2>
+        <p>Type: {{recipe.type}}</p>
+        <p>Cooking time: {{recipe.cook_time}} minutes</p>
+        <h3>ingredients needed:</h3>
         <ul>
           <li *ngFor="let ing of recipe.ingredients">
             {{ing}}
@@ -20,14 +22,15 @@
   </div>
 </section>
 
-<section>
-  <p>Selected recipes: {{ selectedRecipes }}</p>
-  <div *ngIf="ingredientsToShow.length > 0">
-    <p>Ingredients of selected recipes:</p>
-    <ul>
-      <li *ngFor="let ing of ingredientsToShow">
-        {{ ing }}
-      </li>
-    </ul>
+<section *ngIf="ingredientsToShow.length > 0" class="container ingredients-list">
+  <div class="row">
+    <div class="col-12">
+      <h2>Ingredients of selected recipes:</h2>
+      <ul>
+        <li *ngFor="let ing of ingredientsToShow">
+          {{ ing }}
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

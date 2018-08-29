@@ -1,0 +1,21 @@
+.ingredients-list {
+    h2 {
+        background-color: #cdc2a1;
+        color: #2b2b2b;
+        font-size: 24px;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin: 0;
+
+        li {
+            display: inline-block;
+            background-color: #2b2b2b;
+            color: #cdc2a1;
+            padding: 3px 10px;
+            margin: 0 10px 10px 0;
+        }
+    }
+}

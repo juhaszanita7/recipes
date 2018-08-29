@@ -1,0 +1,24 @@
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #2b2b2b;
+    color: #cdc2a1;
+    padding: 10px;
+    z-index: 1;
+
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+}
